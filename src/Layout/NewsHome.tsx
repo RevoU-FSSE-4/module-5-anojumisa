@@ -51,7 +51,7 @@ const NewsHome: React.FC<NewsHomeProps> = ({ articles }) => {
 									</div>
 									<div className="p-6 pt-0">
 										<button
-											className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-red-600 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+											className=" select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-red-600 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
 											type="button"
 											onClick={() => window.open(article?.url, "_blank")}
 										>
@@ -71,7 +71,7 @@ const NewsHome: React.FC<NewsHomeProps> = ({ articles }) => {
 			<div className="">
 				<ul className="">
 					{articles.map((article, index) => (
-						<li key={index} className="">
+						<a href={article.url} target="_blank" rel="noreferrer"><li key={index} className="">
 							<div className="flex flex-col h-100 mx-auto mb-6 rounded-lg bg-white text-surface shadow-secondary-1 dark:bg-surface-dark dark:text-white md:max-w-7xl md:flex-row">
 								<img
 									className="h-100 rounded-t-lg object-cover md:h-auto md:w-48 md:!rounded-none md:!rounded-s-lg"
@@ -90,7 +90,7 @@ const NewsHome: React.FC<NewsHomeProps> = ({ articles }) => {
 									</p>
 								</div>
 							</div>
-						</li>
+						</li></a>
 					))}
 				</ul>
 			</div>
