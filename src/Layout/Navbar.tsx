@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
 	return (
 		<div>
 			<nav className="flex flex-col justify-between  dark:bg-red-800">
-				<div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-10">
+				<div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-1">
 					<Link
 						className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white p-6"
 						href="/"
