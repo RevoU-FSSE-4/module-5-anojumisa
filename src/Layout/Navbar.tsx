@@ -4,8 +4,8 @@ import React, { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
 import axios from "axios";
 import Link from 'next/link'
-// import SearchFeature from "@/components/SearchFeature";
-// import SearchResult from "@/components/SearchResults";
+import SearchFeature from "@/components/SearchFeature";
+import SearchResult from "@/components/SearchResults";
 
 interface Article {
 	title: string;
@@ -90,11 +90,11 @@ const Navbar: React.FC = () => {
 					{/* <SearchFeature onSearch={function (query: string): void {
 						throw new Error("Function not implemented.");
 					} } /> */}
-					{/* <div className="App">
+					<div className="App">
 						<SearchFeature onSearch={handleSearch} />
 						
 					</div>
-					{articles.length > 0 && <SearchResult articles={articles} />} */}
+					{articles.length > 0 && <SearchResult articles={articles} />}
 				</div>
 			</nav>
 		</div>
