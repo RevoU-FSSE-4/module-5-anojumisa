@@ -24,15 +24,15 @@ const Subscription: React.FC<SubscriptionProps> = () => {
 			</h1>
 			<h2>Let's subscribe so you don't miss the latest updates!</h2>
 			<div className="my-4">
-				<form className="max-w-full mx-auto" onSubmit={handleSubscribe}>
+				<form className="w-full mx-auto" onSubmit={handleSubscribe}>
 					<label className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
 						Search
 					</label>
-					<div className="relative">
+					<div className="relative w-full">
 						<input
 							type="email"
 							id="default-search"
-							className="block p-4 ps-10 text-sm text-gray-200 border border-gray-100 rounded-lg bg-gray-10 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-200 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+							className="block p-4 text-sm text-gray-200 border border-gray-100 rounded-lg bg-gray-10 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-200 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
 							placeholder="Your email..."
 							required
 							value={email}

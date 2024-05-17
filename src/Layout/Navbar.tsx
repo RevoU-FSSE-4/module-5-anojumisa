@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 // import SearchFeature from "./SearchFeature";
 // import SearchResultsList from "./SearchResultsList";
 // import { Link } from "react-router-dom";
-// import axios from "axios";
+import axios from "axios";
 import Link from 'next/link'
+// import SearchFeature from "@/components/SearchFeature";
+// import SearchResult from "@/components/SearchResults";
 
 interface Article {
 	title: string;
@@ -21,8 +23,8 @@ const Navbar: React.FC = () => {
 		const url = `https://newsapi.org/v2/everything?q=${query}&sortBy=publishedAt&apiKey=${apiKey}&pageSize=5`;
 		axios
 			.get(url)
-			.then((response) => setArticles(response.data.articles))
-			.catch((error) => console.error(error));
+			.then((response: { data: { articles: React.SetStateAction<Article[]>; }; }) => setArticles(response.data.articles))
+			.catch((error: any) => console.error(error));
 	};
 
 	useEffect(() => {
@@ -75,15 +77,24 @@ const Navbar: React.FC = () => {
 								Technology
 							</Link>
 						</li>
-						
+						<li>
+							<Link
+								className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:yellow-400 md:p-0 dark:text-white md:dark:hover:text-yellow-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+								href="/category/science"
+							>
+								Science
+							</Link>
+						</li>
 					</ul>
-                    <input type="text" />
-					{/* <SearchFeature /> */}
+                    
+					{/* <SearchFeature onSearch={function (query: string): void {
+						throw new Error("Function not implemented.");
+					} } /> */}
 					{/* <div className="App">
 						<SearchFeature onSearch={handleSearch} />
 						
 					</div>
-					{articles.length > 0 && <SearchResultsList articles={articles} />} */}
+					{articles.length > 0 && <SearchResult articles={articles} />} */}
 				</div>
 			</nav>
 		</div>
